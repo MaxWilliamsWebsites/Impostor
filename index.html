@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Impostor</title>
+
+        <meta name="Impostor game"
+            content="a short discussion game for 3-20 players">
+
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+
+    <body>
+
+        <div id="PlayerManageWindow" class="inactive transparent-background">
+            <div id="PlayerManagePopup" class="popup">
+                
+                <div id="PlayerManageTop">
+                    <h2 class="text-dark text-popup-header">EDIT PLAYERS</h2>
+                    <div style="height: 1vh;"></div>
+                    <p class="text-primary text-medium"><strong>3-20 players</strong></p>
+                    <p class="text-primary text-medium">Tap a name to edit it</p>
+                </div>
+
+                <div id="PlayerManageMiddle">
+                </div>
+
+                <div id="PlayerManageEnd">
+
+                    <div id="PlayersInputContainer">
+                        <input type="text" id="PlayerInputField">
+                        <button id="PlayerInputButton">+</button>
+                    </div>
+                    <button id="ConfirmPlayersButton">CONFIRM</button>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id="CategoryManageWindow" class="inactive transparent-background">
+            <div id="CategoryManagePopup" class="popup">
+                
+                <div id="CategoriesTop">
+                    <h2 class="text-dark text-popup-header">SELECT CATEGORIES</h2>
+                    <div style="height: 1vh;"></div>
+                    <p class="text-primary text-medium text-wrap"><strong>choose on or more categories for the game</strong></p>
+                </div> 
+
+                <div id="Categories">
+                </div>
+
+                <div id="ConfirmCategoryFade"></div>
+                <button id="ConfirmCategoriesButton">CONFIRM</button>
+
+            </div>
+        </div>
+
+        <div id="ImpostersManageWindow" class="transparent-background inactive">
+            <div id="ImpostersManagePopup" class="popup">
+                
+                <div id="ImpostersTop">
+                    <h2 class="text-dark text-popup-header">SELECT IMPOSTER COUNT</h2>
+                    <div style="height: 1vh;"></div>
+                    <p class="text-primary text-medium" id="ImpostersText">with 3-5 players you can have 1 Imposter.</p>
+                </div>
+
+                <div id="Imposters">
+                </div>
+
+                <button id="ConfirmImpostorsButton">CONFIRM</button>
+
+            </div>
+        </div>
+
+        <div id="GameplayWindow" class="inactive">
+
+            <div class="exit-button" id="GameplayExitButton"><h1 class="exit-button-text">+</h1></div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h1 id="PlayerNameText1" class="player-card-text">Player 1</h1>
+                        <p class="text-primary text-medium">Do not tell the word to other players.</p>
+                        <div style="height: 100%;"></div>
+                        <h3 class="text-dark text-medium">HOLD TO REVEAL</h3>
+                    </div>
+                        
+                    <div class="flip-card-back">
+                        <h1 id="PlayerNameText2" class="player-card-text">Player 1</h1>
+                        <h2 id="ImposterRevealText" class="text-dark text-medium">You are the imposter!</h2>
+                        <p class="text-primary text-medium">your word is..</p>
+                        <div class="word-card-container">
+                            <h1 id="WordText">WORD</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="NextPlayerButton" class="inactive">NEXT PLAYER</button>
+
+        </div>
+
+        <div id="DiscussionWindow" class="inactive">
+
+            <div class="exit-button" id="DiscussionExitButton"><h1 class="exit-button-text">+</h1></div>
+
+            <h1 class="text-dark" id="GameStartedText">Game started! Time to talk and catch the imposter.</h1>
+            <h3 id="StartsConvoText" class="text-dark">Player 1 starts the conversation!</h3>
+            <div style="height: 5vh;"></div>
+            <button id="RevealImpostButton">REVEAL IMPOSTER & WORD</button>
+
+        </div>
+
+        <div id="RevealWindow" class="">
+
+            <div class="exit-button" id="RevealExitButton"><h1 class="exit-button-text">+</h1></div>
+
+            <h1 class="text-dark text-large" style="text-align: center;">IMPOSTERS</h1>
+            <h3 id="RevealedImpostersText" class="text-dark text-medium">Player1, Player2, Player67</h3>
+            <div class="custom-hr"></div>
+            <h1 class="text-dark text-large" style="text-align: center;">WORD:</h1>
+            <h3 id="RevealedWordText" class="text-dark text-larger text-negative">diddy</h3>
+            <div style="height: 10vh;"></div>
+            <button id="NewGameButton">NEW GAME</button>
+
+        </div>
+
+        <button id="PlayButton">PLAY</button>
+
+        <header>
+            <div class="header-side"></div>
+            <div class="header-center">
+                <h1 class="text-primary" id="imposter">IMPOSTOR</h1>
+                <h1 class="text-primary" id="who">WHO?</h1>
+            </div>
+            <div class="header-side"></div>
+        </header>
+
+
+        <div class="window">
+            
+            <h2 class="text-dark window-header">GAME MODE</h2>
+            <div style="display: flex; gap: 1.5vw; padding: 0; margin-top: 2vw; margin-bottom: 2vw;">
+                <button class="primary-button" id="ClassicButton">Classic</button>
+                <button class="primary-button inactive" id="OnlineButton">Online</button>
+            </div>
+            <p class="text-dark descript-text" style="margin-bottom: 1vw;"><strong>Classic: </strong>Gather in the same room and pass the device between players.</p>
+            <p class="text-dark descript-text"><strong>Online: </strong>Play in your group chat (WhatsApp, iMessage, etc.)</p>
+        </div>
+
+        <div class="window" id="PlayersWindow">
+            <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                <h2 class="text-dark window-header">PLAYERS</h2>
+                <h2 class="text-dark window-header">></h2>
+            </div>
+            <div id="PlayerIconContainer" class="icon-container">
+
+
+            </div>
+        </div>
+
+        <div class="window" id="CategoryWindow">
+            <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                <h2 class="text-dark window-header">CATEGORIES</h2>
+                <h2 class="text-dark window-header">></h2>
+            </div>
+            <div id="CategoryIconContainer" class="icon-container">
+
+
+            </div>
+        </div>
+
+        <div class="window" id="ImpostersWindow">
+            <div style="display: flex; flex-direction: row; justify-content: space-between; margin-bottom: 1.5vw;">
+                <h2 class="text-dark window-header">IMPOSTERS</h2>
+                <h2 class="text-dark window-header">></h2>
+            </div>
+            <p class="text-dark text-medium">1 Imposter</p>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
