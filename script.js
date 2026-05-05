@@ -1,4 +1,3 @@
-
 const width = window.innerWidth;
 const height = window.innerHeight;
 
@@ -116,12 +115,6 @@ function AddPlayer(text)
     });
     textInput.addEventListener("input", () => {
 
-        if (textInput.value.length < 3 || textInput.value.length > 30)
-        {
-            textInput.value = textInput.lastValue;
-            return;
-        }
-
         textInput.lastValue = textInput.value;
         p.name = textInput.value;
     });
@@ -206,6 +199,8 @@ function newImposterButton(count)
 
     container.addEventListener("click", () => {
         ImposterCount = count;
+        const ImposterCountText = document.getElementById("ImposterCountText");
+        ImposterCountText.textContent = ImposterCount + " Imposter" + ((ImposterCount > 1) ? "s" : "");
         for (let i = 0; i < imposterButtons.length; i++)
         {
             if (i == count-1)
@@ -569,7 +564,11 @@ People.definitions.push(new CategoryDefinition("Donald Trump",     ["wall", "ora
 People.definitions.push(new CategoryDefinition("Barack Obama",     ["Hope", "mic drop", "cool"]));
 People.definitions.push(new CategoryDefinition("Elon Musk",        ["rockets", "Twitter", "edgy"]));
 People.definitions.push(new CategoryDefinition("Mark Zuckerberg",  ["robot", "Facebook", "lizard"]));
-
+People.definitions.push(new CategoryDefinition("Epstein",          ["goat", "temple", "babies", "isreal"]))
+People.definitions.push(new CategoryDefinition("Netanyahu",        ["goat", "isreal", "geneva-convention", "babysitter"]))
+People.definitions.push(new CategoryDefinition("Diddy",            ["beiber", "lube", "party"]))
+People.definitions.push(new CategoryDefinition("Johnny sins",      ["plumber", "astronaut", "electritian", "doctor"]))
+People.definitions.push(new CategoryDefinition("Evie",             ["wedding", "85KG", "crashout"]))
 
 Characters = new Category("Characters", []);
 
@@ -601,12 +600,32 @@ Characters.definitions.push(new CategoryDefinition("Kratos",          ["ash", "s
 Characters.definitions.push(new CategoryDefinition("Sonic",           ["rings", "fast", "hedgehog"]));
 Characters.definitions.push(new CategoryDefinition("Agent 47",        ["bald", "barcode", "hitman"]));
 
+
+Freaky = new Category("Freaky", []);
+Freaky.definitions.push(new CategoryDefinition("rose toy", ["flower", "vibrate", "mum's bedroom"]))
+Freaky.definitions.push(new CategoryDefinition("dildo", ["suction", "lightsaber", "shoebox"]))
+Freaky.definitions.push(new CategoryDefinition("yaoi", ["best", "2", "homo", "guys"]))
+Freaky.definitions.push(new CategoryDefinition("yuri", ["2", "homo", "girls"]))
+Freaky.definitions.push(new CategoryDefinition("backshots", ["doggy", "goon", "behind"]))
+Freaky.definitions.push(new CategoryDefinition("ejaculation", ["creamy", "salty", "sticky"]))
+Freaky.definitions.push(new CategoryDefinition("femboy", ["best", "dih", "thigh-highs"]))
+Freaky.definitions.push(new CategoryDefinition("ladyboy", ["surprise", "thailand", "dih"]))
+Freaky.definitions.push(new CategoryDefinition("penis", ["head", "tip", "goon", "vein"]))
+Freaky.definitions.push(new CategoryDefinition("bumming", ["behind", "sketch", "lube", "poopy"]))
+Freaky.definitions.push(new CategoryDefinition("post-nut clarity", ["after", "regret", "sticky"]))
+Freaky.definitions.push(new CategoryDefinition("furries", ["amazing", "suit", "fluffy", "crackable", "con"]))
+Freaky.definitions.push(new CategoryDefinition("vagina", ["wet", "tight", "loose", "beef"]))
+Freaky.definitions.push(new CategoryDefinition("boobs", ["pair", "seth", "squish"]))
+Freaky.definitions.push(new CategoryDefinition("breast-milk", ["seth", "'omelandah", "protein"]))
+
+
 AddCategoryButton(EverydayObjects, true);
 AddCategoryButton(FoodAndDrinks);
 AddCategoryButton(Animals);
 AddCategoryButton(Sports);
 AddCategoryButton(People);
 AddCategoryButton(Characters);
+AddCategoryButton(Freaky)
 
 const PlayButton = document.getElementById("PlayButton");
 const GameplayWindow = document.getElementById("GameplayWindow");
